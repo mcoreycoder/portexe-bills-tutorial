@@ -1,8 +1,9 @@
-import React, {useContext, useState, useEffect, createContext} from 'react';
+import React, { useState, createContext, useEffect} from 'react';
 
 const BillContext = createContext()
 
-const BillProvider = ({childern}) => {
+const BillProvider = ({children}) => {
+
     const [bills, setBills] = useState([])
 
     const updateBills = (bill) => {
@@ -14,7 +15,7 @@ const BillProvider = ({childern}) => {
             bills,
             updateBills
         }}>
-            {childern}
+            {children}
         </BillContext.Provider>
     )
 }

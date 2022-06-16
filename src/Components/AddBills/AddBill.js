@@ -1,13 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react';
 import './style.css';
+import { BillContext } from '../../Context/BillContext';
 
 const AddBill = () => {
  const [newBillTitle, setNewBillTitle] = useState('')
  const [newBillCost, setNewBillCost] = useState('')
 
- const updateBills = () => {
-    console.log(newBillTitle, newBillCost)
- }
+ const { updateBills } = useContext(BillContext)
+
  const billObjectValid = () => {
     //newBillCost is truthy and is a number
     const costValid = newBillCost && Number.parseFloat(newBillCost)
@@ -39,7 +39,10 @@ const AddBill = () => {
             <button className='add-bill-form-control btn btn-primary'
             onClick={(e)=> {
                 if(billObjectValid()){
-                    updateBills()
+                    updateBills({
+                        title: newBillTitle,
+                        monthlyCost: newBillCost
+                    })
                     clearForm()
                 }
             }}>Add Bill</button>

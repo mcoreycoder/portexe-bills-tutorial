@@ -1,11 +1,14 @@
 import React from 'react'
+import { BillProvider } from '../../Context/BillContext';
 import AddBill from '../AddBills/AddBill';
 import './App.css';
 
 const App = () => {
   return (
   <div className='bills-container'>
-    <AddBill />
+    <BillProvider>
+      <AddBill />
+    </BillProvider>
   </div>
   );
 }
