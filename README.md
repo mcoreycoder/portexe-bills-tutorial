@@ -1,3 +1,7 @@
+# Tutorial video
+Coding A Simple Accounting App With React - Part 2 (start here where project actually starts to be built)
+https://www.youtube.com/watch?v=OBZBFkNTTqE
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
